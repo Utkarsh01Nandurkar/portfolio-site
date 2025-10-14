@@ -1,34 +1,32 @@
-/* Splash-only styling (dark gray matte + fast glow pulse) */
+/* Splash page only */
 .splash-body{
-  margin:0; background:#1e1e1e; color:#f1f1f1;
-  font-family:Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
-  min-height:100svh; display:grid; place-items:center;
+  background:#0d1b22;
+  color:#e6fdff;
+  min-height:100svh;
+  display:grid;place-items:center;
+  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 }
-.splash-wrap{
-  text-align:center; position:relative; width:min(800px, 92vw);
-}
-.devops-loop{
-  width:min(420px, 70vw);
-  display:block; margin:0 auto 10px auto;
-}
-.loop-stroke{
-  stroke-linecap:round;
-  animation: glowPulse 1.2s ease-in-out infinite alternate;
-}
-@keyframes glowPulse{
-  0%   { stroke:#00bcd4; opacity:0.7 }
-  100% { stroke:#6ee7f3; opacity:1   }
-}
+
+.splash-wrap{text-align:center; animation:fadeIn .6s ease both}
+.devops-loop{width:min(520px,86vw); margin-bottom:10px; animation:pulse 1.8s ease-in-out infinite}
+.loop-stroke{stroke-linecap:round}
+
 .splash-name{
-  margin:10px 0 4px 0;
   font-family:'Dancing Script', cursive;
-  font-weight:700; font-size:clamp(36px,6vw,56px);
-  text-shadow:0 0 20px rgba(0,188,212,.25);
+  font-size:clamp(34px,6.5vw,64px);
+  margin:6px 0 0; letter-spacing:.2px;
+  text-shadow:0 0 18px rgba(0,188,212,.25);
 }
 .splash-tagline{
-  margin:0 0 10px 0; color:#cfe7eb;
-  font-size:clamp(14px,2.2vw,18px);
+  margin:4px 0 12px; color:#bfeef6; font-weight:600
 }
-.splash-hint{
-  margin-top:6px; color:#9fb3b8; font-size:14px; letter-spacing:.4px;
+.splash-hint{opacity:.75; font-size:14px; letter-spacing:.6px}
+
+@keyframes pulse{
+  0%,100%{opacity:.85; filter:drop-shadow(0 0 10px rgba(0,188,212,.35))}
+  50%{opacity:1;   filter:drop-shadow(0 0 18px rgba(0,188,212,.55))}
+}
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(8px)}
+  to{opacity:1; transform:none}
 }
