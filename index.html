@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Utkarsh Nandurkar • Enter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/splash.css">
+  <script>
+    // Auto enter after the short animation
+    window.addEventListener('load', () => {
+      setTimeout(() => location.href = 'home.html', 2000);
+    });
+  </script>
+</head>
+<body class="splash-body">
+  <div class="splash-wrap" role="main">
+    <!-- Infinity loop with glow -->
+    <svg class="devops-loop" viewBox="0 0 600 300" aria-hidden="true">
+      <defs>
+        <filter id="tealGlow">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+      <path d="M150,150 C150,85 238,85 300,150 C362,215 450,215 450,150 C450,85 362,85 300,150 C238,215 150,215 150,150 Z"
+            fill="none" stroke="#00bcd4" stroke-width="6" filter="url(#tealGlow)" class="loop-stroke"/>
+    </svg>
+
+    <h1 class="splash-name">Utkarsh Nandurkar</h1>
+    <p class="splash-tagline">DevOps & Cloud Engineer</p>
+    <div class="splash-hint">Entering…</div>
+  </div>
+</body>
+</html>
