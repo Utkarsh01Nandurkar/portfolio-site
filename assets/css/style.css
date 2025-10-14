@@ -8,67 +8,62 @@
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);
+  font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
 a{color:var(--accent);text-decoration:none}
 a:hover{opacity:.9}
 .container{max-width:1100px;margin:0 auto;padding:0 16px}
 
-/* ===== Header (Ashutosh-style sticky) ===== */
-.site-header{position:sticky;top:0;z-index:100;background:rgba(30,30,30,.85);backdrop-filter:saturate(120%) blur(8px);border-bottom:1px solid var(--border)}
+/* ===== Header (sticky) ===== */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(30,30,30,.85);
+  backdrop-filter:saturate(120%) blur(8px);border-bottom:1px solid var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:60px}
-.brand{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:8px;border:1px solid var(--accent);color:var(--accent);font-weight:800}
+.brand{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:8px;
+  border:1px solid var(--accent);color:var(--accent);font-weight:800}
 .links{display:flex;gap:18px}
 .nav-link{font-weight:600;color:#b0eaf2}
 .nav-link.active{color:#e6fdff;border-bottom:2px solid var(--accent);padding-bottom:2px}
-.nav-toggle{display:none}
 
-/* ===== Hero (full viewport) ===== */
-.hero{min-height:100svh;display:grid;place-items:center;padding:56px 16px 24px}
-.hero-inner{width:min(1200px,92vw);text-align:center;position:relative}
-.signature-wrap{margin:auto}
-.signature-svg{width:100%;height:auto;filter:drop-shadow(0 0 10px rgba(0,188,212,.28));}
-.signature-text{font-family:'Dancing Script', cursive;font-weight:700;font-size:clamp(42px,7vw,72px);fill:#e7fdff;stroke:rgba(0,0,0,.35);stroke-width:1.2;paint-order:stroke}
-#utk-stroke{stroke-dasharray:1400;stroke-dashoffset:1400;animation:sign-draw 2.8s ease-in-out forwards}
-@keyframes sign-draw{to{stroke-dashoffset:0}}
-
-.typed{margin-top:6px;color:#cfe7eb;font-size:clamp(16px,2.2vw,20px);min-height:28px}
-.cursor{display:inline-block;margin-left:4px;animation:blink 1s step-end infinite}
-@keyframes blink{50%{opacity:0}}
-
-.scroll-down{display:inline-block;margin-top:24px;width:26px;height:42px;border:2px solid var(--accent);border-radius:20px;position:relative;opacity:.8}
-.scroll-down::after{content:"";position:absolute;left:50%;top:8px;transform:translateX(-50%);width:4px;height:8px;border-radius:2px;background:var(--accent);animation:wheel 1.6s ease-in-out infinite}
-@keyframes wheel{0%{opacity:.9;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,12px)}}
+/* ===== Hero ===== */
+.hero{min-height:88svh;display:grid;place-items:center;padding:56px 16px 24px}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:20px;align-items:center;width:min(1100px,92vw)}
+.signature-text{font-family:'Dancing Script', cursive;font-weight:700;
+  font-size:clamp(38px,6.5vw,72px);letter-spacing:.2px;color:#e7fdff;
+  text-shadow:0 0 18px rgba(0,188,212,.22)}
+.tagline{margin-top:6px;color:#cfe7eb;font-size:clamp(16px,2.2vw,20px)}
+.aboutp{color:var(--muted);margin:12px 0 18px 0}
+.socials{display:flex;gap:12px;margin-top:12px}
+.icon{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#142326;border:1px solid rgba(0,188,212,.35)}
+.icon svg{width:20px;height:20px;fill:#bff7ff}
+.illustration{width:100%;height:auto;border-radius:14px;border:1px dashed rgba(0,188,212,.25);padding:8px}
 
 /* ===== Sections ===== */
 .section{padding:72px 0;border-top:1px solid var(--border)}
-h2{margin:0 0 12px 0;font-size:clamp(24px,2.6vw,32px)}
-p{color:var(--muted)}
-
-.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
-.badge{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:8px 14px;font-weight:600;color:#dbfaff}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:16px}
-.card{background:var(--card);border:1px solid var(--border);padding:18px;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.18)}
-.card h3{margin:0 0 6px 0;font-size:20px}
-.card p{margin:0 0 10px 0}
-.tags{display:flex;flex-wrap:wrap;gap:8px}
+h1,h2{margin:0 0 10px 0}
+h2{font-size:clamp(24px,2.6vw,32px)}
+.card{background:var(--card);border:1px solid var(--border);padding:18px;border-radius:16px;
+  box-shadow:0 8px 30px rgba(0,0,0,.18)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 .tags span{font-size:12px;background:#1b2a2c;border:1px solid rgba(0,188,212,.3);color:#bff7ff;border-radius:999px;padding:4px 10px}
 
-.contact-grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
-.socials a{display:inline-block;margin-right:12px;border-bottom:1px dashed rgba(0,188,212,.4);padding-bottom:2px}
+/* ===== Timeline ===== */
+.timeline{position:relative;margin-left:26px}
+.timeline::before{content:"";position:absolute;left:-12px;top:0;bottom:0;width:2px;background:rgba(0,188,212,.35)}
+.item{position:relative;margin:14px 0}
+.item::before{content:"";position:absolute;left:-16px;top:10px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.item h3{margin:0 0 6px 0}
+.meta{color:#9fb3b8;font-size:14px}
 
 /* ===== Footer ===== */
 .site-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:16px 20px;background:var(--bg);color:#b0bec5;border-top:1px solid var(--border)}
 .footer-signature{font-family:'Dancing Script', cursive;font-size:18px;color:#90e8f3;opacity:.9}
 
-/* ===== Reveal on scroll (Ashutosh-like) ===== */
+/* ===== Reveal animation ===== */
 .reveal{opacity:0;transform:translateY(14px);transition:all .6s ease}
 .reveal.visible{opacity:1;transform:none}
 
 /* ===== Responsive ===== */
-@media (max-width: 860px){
-  .links{display:none}
-  .nav-toggle{display:block;width:28px;height:28px;border:none;background:transparent;position:relative}
-  .nav-toggle::before,.nav-toggle::after{content:"";position:absolute;left:0;right:0;height:2px;background:#cfe7eb}
-  .nav-toggle::before{top:9px}.nav-toggle::after{bottom:9px}
+@media (max-width: 900px){
+  .hero-grid{grid-template-columns:1fr}
 }
