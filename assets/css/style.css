@@ -1,51 +1,48 @@
-
 :root{
-  --bg:#1e1e1e;
-  --text:#f1f1f1;
+  --bg:#1e1e1e;          /* dark gray */
+  --text:#f1f1f1;        /* soft white */
   --muted:#cfd8dc;
-  --accent:#00bcd4;
+  --accent:#00bcd4;      /* teal */
   --card:#262626;
   --border:rgba(255,255,255,0.06);
 }
 
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
 a{color:var(--accent);text-decoration:none}
 a:hover{opacity:.9}
-
 .container{max-width:1100px;margin:0 auto;padding:0 16px}
-.section{padding:64px 0;border-top:1px solid var(--border)}
-h1,h2,h3{margin:0 0 12px 0}
-h2{font-size:clamp(24px,2.6vw,32px)}
-p{color:var(--muted)}
 
-.site-header{position:sticky;top:0;z-index:20;background:rgba(30,30,30,.8);backdrop-filter:saturate(120%) blur(8px);border-bottom:1px solid var(--border)}
-.nav{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;padding:10px 16px}
-.brand{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:8px;border:1px solid var(--accent);color:var(--accent);font-weight:800}
+/* ===== Header (Ashutosh-style sticky) ===== */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(30,30,30,.85);backdrop-filter:saturate(120%) blur(8px);border-bottom:1px solid var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:8px;border:1px solid var(--accent);color:var(--accent);font-weight:800}
+.links{display:flex;gap:18px}
+.nav-link{font-weight:600;color:#b0eaf2}
+.nav-link.active{color:#e6fdff;border-bottom:2px solid var(--accent);padding-bottom:2px}
+.nav-toggle{display:none}
 
-.links a{margin-left:14px;font-weight:600;color:#b0eaf2}
-.links a:hover{color:#e0fcff}
-
-.hero{min-height:78vh;display:grid;place-items:center;padding:56px 16px 24px}
-.signature-wrap{width:min(1000px,92vw);margin:auto;text-align:center;position:relative}
+/* ===== Hero (full viewport) ===== */
+.hero{min-height:100svh;display:grid;place-items:center;padding:56px 16px 24px}
+.hero-inner{width:min(1200px,92vw);text-align:center;position:relative}
+.signature-wrap{margin:auto}
 .signature-svg{width:100%;height:auto;filter:drop-shadow(0 0 10px rgba(0,188,212,.28));}
 .signature-text{font-family:'Dancing Script', cursive;font-weight:700;font-size:clamp(42px,7vw,72px);fill:#e7fdff;stroke:rgba(0,0,0,.35);stroke-width:1.2;paint-order:stroke}
 #utk-stroke{stroke-dasharray:1400;stroke-dashoffset:1400;animation:sign-draw 2.8s ease-in-out forwards}
 @keyframes sign-draw{to{stroke-dashoffset:0}}
 
-.subtitle{margin-top:10px;color:#cfe7eb;opacity:0;animation:fadeIn .9s ease 2.1s forwards;font-size:clamp(16px,2.2vw,20px)}
-@keyframes fadeIn{to{opacity:1}}
+.typed{margin-top:6px;color:#cfe7eb;font-size:clamp(16px,2.2vw,20px);min-height:28px}
+.cursor{display:inline-block;margin-left:4px;animation:blink 1s step-end infinite}
+@keyframes blink{50%{opacity:0}}
 
-.fib-wrap{position:relative;display:grid;place-items:center;margin-top:16px}
-.btn{display:inline-block;border:2px solid var(--accent);color:var(--accent);padding:10px 26px;border-radius:999px;font-weight:700;transition:.25s ease;background:transparent}
-.btn:hover{background:var(--accent);color:#0d0d0d;transform:translateY(-2px)}
+.scroll-down{display:inline-block;margin-top:24px;width:26px;height:42px;border:2px solid var(--accent);border-radius:20px;position:relative;opacity:.8}
+.scroll-down::after{content:"";position:absolute;left:50%;top:8px;transform:translateX(-50%);width:4px;height:8px;border-radius:2px;background:var(--accent);animation:wheel 1.6s ease-in-out infinite}
+@keyframes wheel{0%{opacity:.9;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,12px)}}
 
-.fib-spiral{position:absolute;width:260px;height:260px;border-radius:50%;z-index:-1;opacity:.25;animation:spin 9s linear infinite;
-  background:radial-gradient(closest-side, rgba(0,188,212,.18), transparent 68%) center/100% 100% no-repeat}
-.fib-spiral::before,.fib-spiral::after{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px dashed rgba(0,188,212,.35);animation:breathe 3.6s ease-in-out infinite alternate}
-.fib-spiral::after{transform:scale(.618);opacity:.55}
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes breathe{from{transform:scale(.9)}to{transform:scale(1.05)}}
+/* ===== Sections ===== */
+.section{padding:72px 0;border-top:1px solid var(--border)}
+h2{margin:0 0 12px 0;font-size:clamp(24px,2.6vw,32px)}
+p{color:var(--muted)}
 
 .badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .badge{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:8px 14px;font-weight:600;color:#dbfaff}
@@ -57,17 +54,21 @@ p{color:var(--muted)}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
 .tags span{font-size:12px;background:#1b2a2c;border:1px solid rgba(0,188,212,.3);color:#bff7ff;border-radius:999px;padding:4px 10px}
 
-.list{line-height:1.9;color:var(--muted)}
-
-.xp{background:var(--card);border:1px solid var(--border);padding:16px;border-radius:16px;margin-top:12px}
-.xp header{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.meta{color:#9fb3b8;font-size:14px}
-
 .contact-grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
 .socials a{display:inline-block;margin-right:12px;border-bottom:1px dashed rgba(0,188,212,.4);padding-bottom:2px}
 
+/* ===== Footer ===== */
 .site-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:16px 20px;background:var(--bg);color:#b0bec5;border-top:1px solid var(--border)}
 .footer-signature{font-family:'Dancing Script', cursive;font-size:18px;color:#90e8f3;opacity:.9}
 
-.reveal{opacity:0;transform:translateY(10px);transition:all .6s ease}
+/* ===== Reveal on scroll (Ashutosh-like) ===== */
+.reveal{opacity:0;transform:translateY(14px);transition:all .6s ease}
 .reveal.visible{opacity:1;transform:none}
+
+/* ===== Responsive ===== */
+@media (max-width: 860px){
+  .links{display:none}
+  .nav-toggle{display:block;width:28px;height:28px;border:none;background:transparent;position:relative}
+  .nav-toggle::before,.nav-toggle::after{content:"";position:absolute;left:0;right:0;height:2px;background:#cfe7eb}
+  .nav-toggle::before{top:9px}.nav-toggle::after{bottom:9px}
+}
