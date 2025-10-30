@@ -1,0 +1,32 @@
+/* Splash page only */
+.splash-body{
+  background:#0d1b22;
+  color:#e6fdff;
+  min-height:100svh;
+  display:grid;place-items:center;
+  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+.splash-wrap{text-align:center; animation:fadeIn .6s ease both}
+.devops-loop{width:min(520px,86vw); margin-bottom:10px; animation:pulse 1.8s ease-in-out infinite}
+.loop-stroke{stroke-linecap:round}
+
+.splash-name{
+  font-family:'Dancing Script', cursive;
+  font-size:clamp(34px,6.5vw,64px);
+  margin:6px 0 0; letter-spacing:.2px;
+  text-shadow:0 0 18px rgba(0,188,212,.25);
+}
+.splash-tagline{
+  margin:4px 0 12px; color:#bfeef6; font-weight:600
+}
+.splash-hint{opacity:.75; font-size:14px; letter-spacing:.6px}
+
+@keyframes pulse{
+  0%,100%{opacity:.85; filter:drop-shadow(0 0 10px rgba(0,188,212,.35))}
+  50%{opacity:1;   filter:drop-shadow(0 0 18px rgba(0,188,212,.55))}
+}
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(8px)}
+  to{opacity:1; transform:none}
+}
