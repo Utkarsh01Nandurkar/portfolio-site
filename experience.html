@@ -179,6 +179,40 @@
       margin-bottom: 0.5rem;
     }
 
+    /* Projects Section */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .project-card {
+      background-color: var(--bg-card);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-blue);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), var(--neon-glow);
+    }
+
+    .project-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--accent-blue);
+    }
+
+    .project-card p {
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
     /* Tags */
     .tags {
       display: flex;
@@ -273,6 +307,98 @@
   </header>
 
 <section class="section container reveal">
-  <h2>Experience</h2>
+  <h2>Work Experience</h2>
   <div class="timeline">
-   
+    <div class="item card">
+      <h3>AWS / DevOps Engineer – Ataloud</h3>
+      <div class="meta">Oct 2022 – Aug 2024 · Pune, India</div>
+      <ul>
+        <li>Architected and maintained CI/CD pipelines (GitLab, GitHub Actions, ArgoCD) reducing release time by 40%</li>
+        <li>Built multi-environment infrastructure on AWS and GCP using Terraform modules (VPC, EKS, RDS, ECR)</li>
+        <li>Implemented Helm charts and Kubernetes autoscaling (HPA, VPA, Cluster-Autoscaler) to enhance scalability and cut idle costs by 25%</li>
+        <li>Defined SLOs and SLIs for core microservices to measure uptime and error budget consumption</li>
+        <li>Enhanced observability stack with Prometheus, Grafana, Datadog, and OpenTelemetry for distributed tracing</li>
+        <li>Automated incident remediation with Python and AWS Lambda, integrated Slack alerts for on-call rotation</li>
+        <li>Performed RCA and post-mortem reviews, creating runbooks to reduce MTTR by 30%</li>
+        <li>Conducted load testing (k6, JMeter) to validate SLOs and capacity targets</li>
+        <li>Secured cloud access using IAM, GuardDuty, and Vault, aligning with best practices in compliance and network hardening</li>
+      </ul>
+    </div>
+    
+    <div class="item card">
+      <h3>DevOps Engineer – Coding Cult</h3>
+      <div class="meta">May 2025 – Present · Pune, India</div>
+      <ul>
+        <li>CI/CD with AWS CodePipeline & GitHub Actions for microservices; Terraform IaC; Amazon EKS orchestration</li>
+        <li>Secured with IAM, Secrets Manager; observability with CloudWatch; production RCA & on-call</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section container reveal">
+  <h2>DevOps Projects</h2>
+  <div class="projects-grid">
+    <div class="project-card">
+      <h3>Terraform AWS Infrastructure</h3>
+      <p>Built modular Terraform templates to deploy a multi-tier AWS setup (VPC, EC2, RDS, ECR) with remote backend and tagging for cost control.</p>
+      <div class="tags">
+        <span>Terraform</span>
+        <span>AWS</span>
+        <span>Infrastructure as Code</span>
+        <span>VPC</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Kubernetes Auto-Heal System</h3>
+      <p>Automated pod recovery using Python + Kubernetes API with Slack alerting and health checks — improves MTTR.</p>
+      <div class="tags">
+        <span>Kubernetes</span>
+        <span>Python</span>
+        <span>Automation</span>
+        <span>Slack</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Monitoring Stack</h3>
+      <p>Prometheus + Grafana + Alertmanager for cluster & host metrics, dashboards and alerting rules included with OpenTelemetry integration.</p>
+      <div class="tags">
+        <span>Prometheus</span>
+        <span>Grafana</span>
+        <span>Monitoring</span>
+        <span>OpenTelemetry</span>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>DevOps Automation Toolkit</h3>
+      <p>Automated AWS cleanup (EC2, EBS, S3) and alerting scripts, reducing cloud costs by 20%.</p>
+      <div class="tags">
+        <span>Python</span>
+        <span>AWS</span>
+        <span>Automation</span>
+        <span>Cost Optimization</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-left"><span class="footer-signature">Utkarsh&nbsp;Nandurkar</span></div>
+    <div class="footer-right">© <span id="year"></span> · DevOps Engineer</div>
+  </div>
+</footer>
+<script>
+  (function(){
+    const elements = document.querySelectorAll('.reveal');
+    elements.forEach(el => {
+      requestAnimationFrame(() => el.classList.add('visible'));
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  }());
+</script>
+</body>
+</html>
