@@ -1,37 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Utkarsh Nandurkar • Enter</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/splash.css">
-  <script>
-    // Auto enter after the short animation
-    window.addEventListener('load', () => {
-      setTimeout(() => location.href = 'home.html', 2000);
-    });
-  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Utkarsh Nandurkar — DevOps / SRE</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="splash-body">
-  <div class="splash-wrap" role="main">
-    <!-- Infinity loop with glow -->
-    <svg class="devops-loop" viewBox="0 0 600 300" aria-hidden="true">
-      <defs>
-        <filter id="tealGlow">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-      </defs>
-      <path d="M150,150 C150,85 238,85 300,150 C362,215 450,215 450,150 C450,85 362,85 300,150 C238,215 150,215 150,150 Z"
-            fill="none" stroke="#00bcd4" stroke-width="6" filter="url(#tealGlow)" class="loop-stroke"/>
-    </svg>
+<body>
+  <header class="site-header"><div class="container header-inner"><div class="brand"><a href="#home" class="logo">Utkarsh <span>Nandurkar</span></a><p class="tag">DevOps • Site Reliability Engineer • Cloud & Automation</p></div>
+  <nav class="nav" aria-label="Main Navigation"><a href="#home" class="nav-link">Home</a><a href="#experience" class="nav-link">Experience</a><a href="#projects" class="nav-link">Projects</a><a href="#skills" class="nav-link">Skills</a><a href="#education" class="nav-link">Education</a><a href="#contact" class="nav-link cta">Contact</a></nav>
+  <button class="menu-toggle" aria-label="Open menu">☰</button></div></header>
 
-    <h1 class="splash-name">Utkarsh Nandurkar</h1>
-    <p class="splash-tagline">DevOps & Cloud Engineer</p>
-    <div class="splash-hint">Entering…</div>
-  </div>
-</body>
-</html>
+  <main id="main">
+
+    <section id="home" class="section hero"><div class="container hero-grid">
+      <div class="hero-left">
+        <h1>Hi, I’m <span class="accent">Utkarsh</span> — DevOps & SRE</h1>
+        <p class="lead">I design reliable cloud platforms, build automation to remove toil, and implement observability so teams sleep easier. AWS • Kubernetes • Terraform • Python</p>
+        <div class="hero-ctas"><a href="#projects" class="btn">See Projects</a><a href="#experience" class="btn btn-outline">Experience</a><a href="resume/Utkarsh_Nandurkar_Associate_SRE.pdf" class="btn btn-outline" download>Download Resume</a></div>
+      </div>
+      <aside class="hero-right"><div class="contact-card"><a href="mailto:utkarsh.nandurkar1@gmail.com">utkarsh.nandurkar1@gmail.com</a><br/><a href="tel:+919834187542">+91 9834187542</a></div></aside>
+    </div></section>
+
+    <section id="experience" class="section"><div class="container"><h2>Experience</h2><p>Ataloud — DevOps / Site Reliability Engineer (Oct 2022 – Aug 2024)</p></div></section>
+
+    <section id="projects" class="section"><div class="container"><h2>Projects</h2>
+      <div class="grid">
+        <div class="card project-card"><h3>Terraform AWS Infra</h3><p>Modular Terraform templates to deploy multi-tier AWS infra with remote state and tagging.</p><a href="https://github.com/Utkarsh01Nandurkar/terraform-aws-infra" target="_blank" class="btn btn-sm">View Repo</a></div>
+        <div class="card project-card"><h3>Kubernetes Auto-Heal</h3><p>Python auto-heal script to detect and restart unhealthy pods and send Slack alerts — improves MTTR.</p><a href="https://github.com/Utkarsh01Nandurkar/kubernetes-labs-cka" target="_blank" class="btn btn-sm">View Repo</a></div>
+        <div class="card project-card"><h3>Monitoring Stack</h3><p>Prometheus + Grafana + Alertmanager for cluster & host metrics; dashboards and alerting rules included.</p><a href="https://github.com/Utkarsh01Nandurkar/monitoring-stack" target="_blank" class="btn btn-sm">View Repo</a></div>
+        <div class="card project-card"><h3>DevOps Automation (Python)</h3><p>Scripts for AWS resource cleanup, scheduled maintenance, cost optimization and incident remediation.</p><a href="https://github.com/Utkarsh01Nandurkar/devops-python-automation" target="_blank" class="btn btn-sm">View Repo</a></div>
+      </div>
+    </div></section>
+
+    <section id="skills" class="section"><div class="container"><h2>Skills</h2><div class="skill-grid"><div class="skill">AWS</div><div class="skill">Kubernetes</div><div class="skill">Terraform</div><div class="skill">CI/CD</div><div class="skill">Prometheus</div><div class="skill">Python</div></div></div></section>
+
+    <section id="education" class="section"><div class="container"><h2>Education</h2><p>B.E. PRMIT&R, 2022</p></div></section>
+
+    <section id="contact" class="section"><div class="container"><h2>Contact</h2><p><a href="mailto:utkarsh.nandurkar1@gmail.com">utkarsh.nandurkar1@gmail.com</a> • <a href="tel:+919834187542">+91 9834187542</a></p></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>© Utkarsh Nandurkar — DevOps & SRE</p></div></footer>
+  <script src="main.js"></script>
+</body></html>
