@@ -1,423 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Experience • Utkarsh Nandurkar</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
 <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-      --bg-dark: #0a0a0a;
-      --bg-card: #121212;
-      --text-primary: #ffffff;
-      --text-secondary: #b0b0b0;
-      --accent-blue: #00bcd4;
-      --accent-glow: rgba(0, 188, 212, 0.4);
-      --accent-hover: #6ee7f3;
-      --border-color: #1e1e1e;
-      --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-      --neon-glow: 0 0 10px var(--accent-glow), 0 0 20px var(--accent-glow);
-    }
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-card: #121212;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --accent-blue: #00bcd4;
+  --accent-glow: rgba(0,188,212,0.4);
+  --accent-hover: #6ee7f3;
+  --border-color: #1e1e1e;
+  --shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-primary);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+}
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+.container { max-width: 1200px; margin: auto; padding: 20px; }
 
-    /* Header */
-    .site-header {
-      background-color: rgba(10, 10, 10, 0.9);
-      backdrop-filter: blur(10px);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid var(--border-color);
-    }
+.site-header {
+  position: sticky;
+  top: 0;
+  background: #0a0a0a;
+  border-bottom: 1px solid var(--border-color);
+}
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-    }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
 
-    .brand {
-      font-weight: 800;
-      font-size: 1.5rem;
-      color: var(--accent-blue);
-      text-decoration: none;
-      transition: all 0.3s ease;
-      text-shadow: var(--neon-glow);
-    }
+.brand {
+  font-weight: 800;
+  color: var(--accent-blue);
+  text-decoration: none;
+}
 
-    .brand:hover {
-      color: var(--accent-hover);
-    }
+.links { display: flex; gap: 1rem; }
 
-    .links {
-      display: flex;
-      gap: 1.5rem;
-    }
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
 
-    .nav-link {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      position: relative;
-    }
+.nav-link.active, .nav-link:hover {
+  color: var(--accent-blue);
+}
 
-    .nav-link:hover, .nav-link.active {
-      color: var(--accent-blue);
-    }
+.section { padding: 3rem 0; }
 
-    .nav-link.active::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: var(--accent-blue);
-      box-shadow: var(--neon-glow);
-    }
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
 
-    /* Sections */
-    .section {
-      padding: 4rem 0;
-    }
+.timeline { display: flex; flex-direction: column; gap: 2rem; }
 
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      color: var(--text-primary);
-      position: relative;
-      display: inline-block;
-    }
+.item {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
 
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background-color: var(--accent-blue);
-      box-shadow: var(--neon-glow);
-    }
+.item h3 { color: var(--accent-blue); }
 
-    /* Timeline */
-    .timeline {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
+.meta {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
 
-    .item {
-      background-color: var(--bg-card);
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border-color);
-      transition: all 0.3s ease;
-      position: relative;
-    }
+.item ul { padding-left: 1rem; color: var(--text-secondary); }
 
-    .item:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent-blue);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), var(--neon-glow);
-    }
+.item li { margin-bottom: 0.5rem; }
 
-    .item::before {
-      content: '';
-      position: absolute;
-      left: -10px;
-      top: 2rem;
-      width: 20px;
-      height: 20px;
-      background-color: var(--accent-blue);
-      border-radius: 50%;
-      box-shadow: var(--neon-glow);
-    }
-
-    .item h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-      color: var(--accent-blue);
-    }
-
-    .meta {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-      font-style: italic;
-    }
-
-    .item ul {
-      padding-left: 1.2rem;
-      color: var(--text-secondary);
-    }
-
-    .item li {
-      margin-bottom: 0.5rem;
-    }
-
-    /* Projects Section */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .project-card {
-      background-color: var(--bg-card);
-      border-radius: 12px;
-      padding: 2rem;
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border-color);
-      transition: all 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent-blue);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), var(--neon-glow);
-    }
-
-    .project-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: var(--accent-blue);
-    }
-
-    .project-card p {
-      color: var(--text-secondary);
-      margin-bottom: 1.5rem;
-    }
-
-    /* Tags */
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .tags span {
-      background-color: rgba(0, 188, 212, 0.1);
-      color: var(--accent-blue);
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      border: 1px solid rgba(0, 188, 212, 0.3);
-    }
-
-    /* Footer */
-    .site-footer {
-      background-color: var(--bg-card);
-      padding: 2rem 0;
-      border-top: 1px solid var(--border-color);
-    }
-
-    .site-footer .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .footer-signature {
-      font-family: 'Dancing Script', cursive;
-      font-size: 1.5rem;
-      color: var(--accent-blue);
-      text-shadow: var(--neon-glow);
-    }
-
-    .footer-right {
-      color: var(--text-secondary);
-    }
-
-    /* Animations */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: all 0.6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav {
-        flex-direction: column;
-        gap: 1rem;
-      }
-      
-      .links {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      
-      .item::before {
-        left: 50%;
-        top: -10px;
-        transform: translateX(-50%);
-      }
-      
-      .site-footer .container {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-      }
-    }
+.site-footer {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+}
 </style>
 </head>
-<body>
-  <header class="site-header">
-    <nav class="nav container">
-      <a class="brand" href="home.html">UN</a>
-      <div class="links">
-        <a href="home.html" class="nav-link">Home</a>
-        <a href="education.html" class="nav-link">Education</a>
-        <a href="experience.html" class="nav-link active">Experience</a>
-        <a href="contact.html" class="nav-link">Contact Me</a>
-      </div>
-    </nav>
-  </header>
 
-<section class="section container reveal">
+<body>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a class="brand" href="home.html">UN</a>
+    <div class="links">
+      <a href="home.html" class="nav-link">Home</a>
+      <a href="education.html" class="nav-link">Education</a>
+      <a href="experience.html" class="nav-link active">Experience</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<section class="section container">
   <h2>Work Experience</h2>
+
   <div class="timeline">
 
-    <!-- Globeminds -->
-    <div class="item card">
-      <h3>DevOps Engineer – Asics Technologies Pvt Ltd.</h3>
-      <div class="meta">Aug 2024 – Present · Pune, India</div>
+    <!-- Gemini -->
+    <div class="item">
+      <h3>DevOps / SRE Engineer – Gemini Solutions</h3>
+      <div class="meta">Mar 2024 – Present · India</div>
       <ul>
-        <li>Designed, implemented, and maintained CI/CD pipelines using GitHub Actions and AWS CodePipeline to automate build, test, and deployment workflows.</li>
-        <li>Deployed and managed containerized applications using Docker, ensuring consistent builds across development and production environments.</li>
-        <li>Worked with Kubernetes (EKS) to deploy and operate microservices using Helm charts, supporting rolling updates, rollbacks, and basic autoscaling.</li>
-        <li>Provisioned and managed AWS infrastructure using Terraform, including VPC, EC2, EKS, IAM, ALB, and ECR, following Infrastructure as Code best practices.</li>
-        <li>Performed hands-on production troubleshooting for Kubernetes pods, services, and nodes using kubectl, logs, and events.</li>
-        <li>Monitored applications and infrastructure using AWS CloudWatch, configuring metrics, logs, and alarms for production visibility.</li>
-        <li>Improved deployment reliability and consistency by standardizing infrastructure and deployment automation.</li>
-        <li>Used basic MySQL queries (SELECT, WHERE, JOIN, GROUP BY) for application data validation and issue analysis.</li>
+        <li>Worked with <strong>Datadog, PagerDuty, and ServiceNow</strong> for monitoring, alerting, and incident management.</li>
+        <li>Gained exposure to <strong>AutoSys and Apache Airflow</strong> for job scheduling and workflow orchestration.</li>
+        <li>Assisted in managing <strong>Kubernetes (EKS)</strong> and cloud infrastructure (AWS & Azure VMs).</li>
+      </ul>
+    </div>
+
+    <!-- Globeminds -->
+    <div class="item">
+      <h3>DevOps / SRE Engineer – Globeminds Technology Pvt Ltd</h3>
+      <div class="meta">Aug 2024 – Feb 2026 · India</div>
+      <ul>
+        <li>Built CI/CD pipelines using <strong>GitHub Actions and AWS CodePipeline</strong> for microservices deployments.</li>
+        <li>Managed applications using <strong>Docker and Kubernetes (EKS)</strong> with Helm-based deployments.</li>
+        <li>Provisioned infrastructure using <strong>Terraform (IaC)</strong> ensuring scalable environments.</li>
+        <li>Monitored systems using <strong>CloudWatch, Prometheus, and Grafana</strong>.</li>
+        <li>Automated workflows using <strong>Python and Shell scripting</strong>.</li>
+        <li>Collaborated with developers to improve CI/CD and deployment processes.</li>
+        <li>Worked with <strong>ArgoCD (GitOps exposure)</strong> for Kubernetes deployments.</li>
       </ul>
     </div>
 
     <!-- Ataloud -->
-    <div class="item card">
+    <div class="item">
       <h3>AWS / DevOps Engineer – Ataloud</h3>
       <div class="meta">Oct 2022 – Aug 2024 · Pune, India</div>
       <ul>
-        <li>Built and automated CI/CD pipelines using GitLab CI/CD for microservices-based applications.</li>
-        <li>Containerized applications using Docker and deployed workloads on AWS ECS and EKS.</li>
-        <li>Assisted in automating build and deployment tasks using Shell scripting and Python, reducing manual operational effort.</li>
-        <li>Implemented monitoring dashboards using Prometheus and Grafana to track application performance, availability, and system health.</li>
-        <li>Supported AWS security best practices by working with IAM roles, VPC networking, and GuardDuty alerts.</li>
-        <li>Actively supported production deployments and troubleshooting, collaborating with development and QA teams.</li>
-        <li>Used basic SQL queries to verify application data during deployments and production issues.</li>
+        <li>Built CI/CD pipelines using <strong>GitLab CI/CD</strong> for automated deployments.</li>
+        <li>Deployed applications using <strong>Docker, ECS, and EKS</strong>.</li>
+        <li>Managed AWS services including <strong>EC2, IAM, VPC, ALB, ECR, and S3</strong>.</li>
+        <li>Monitored systems using <strong>CloudWatch, Prometheus, and Grafana</strong>.</li>
+        <li>Automated tasks using <strong>Shell scripting and Python</strong>.</li>
       </ul>
     </div>
 
   </div>
 </section>
 
-<section class="section container reveal">
-  <h2>DevOps Projects</h2>
-  <div class="projects-grid">
-    <div class="project-card">
-      <h3>Terraform AWS Infrastructure</h3>
-      <p>Built modular Terraform templates to deploy a multi-tier AWS setup (VPC, EC2, RDS, ECR) with remote backend and tagging for cost control.</p>
-      <div class="tags">
-        <span>Terraform</span>
-        <span>AWS</span>
-        <span>Infrastructure as Code</span>
-        <span>VPC</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <h3>Kubernetes Auto-Heal System</h3>
-      <p>Automated pod recovery using Python + Kubernetes API with Slack alerting and health checks — improves MTTR.</p>
-      <div class="tags">
-        <span>Kubernetes</span>
-        <span>Python</span>
-        <span>Automation</span>
-        <span>Slack</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <h3>Monitoring Stack</h3>
-      <p>Prometheus + Grafana + Alertmanager for cluster & host metrics, dashboards and alerting rules included with OpenTelemetry integration.</p>
-      <div class="tags">
-        <span>Prometheus</span>
-        <span>Grafana</span>
-        <span>Monitoring</span>
-        <span>OpenTelemetry</span>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <h3>DevOps Automation Toolkit</h3>
-      <p>Automated AWS cleanup (EC2, EBS, S3) and alerting scripts, reducing cloud costs by 20%.</p>
-      <div class="tags">
-        <span>Python</span>
-        <span>AWS</span>
-        <span>Automation</span>
-        <span>Cost Optimization</span>
-      </div>
-    </div>
-
-   <div class="project-card">
-     <h3>MySQL Data Validation & Troubleshooting</h3>
-     <p>Used basic MySQL queries to validate application data, verify deployments, and assist in troubleshooting production issues using SELECT, WHERE, JOIN, GROUP BY, and ORDER BY clauses.</p>
-     <div class="tags">
-       <span>MySQL</span>
-       <span>SQL</span>
-       <span>Data Validation</span>
-       <span>Troubleshooting</span>
-     </div>
-   </div>
-  </div>
-</section>
-     
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-left"><span class="footer-signature">Utkarsh&nbsp;Nandurkar</span></div>
-    <div class="footer-right">© <span id="year"></span> · DevOps Engineer</div>
-  </div>
+  © 2026 Utkarsh Nandurkar • DevOps Engineer
 </footer>
-<script>
-  (function(){
-    const elements = document.querySelectorAll('.reveal');
-    elements.forEach(el => {
-      requestAnimationFrame(() => el.classList.add('visible'));
-    });
-    document.getElementById('year').textContent = new Date().getFullYear();
-  }());
-</script>
+
 </body>
 </html>
