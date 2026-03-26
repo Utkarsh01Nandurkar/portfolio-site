@@ -1,149 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact • Utkarsh Nandurkar</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact • Utkarsh Nandurkar</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-      --bg-dark: #0a0a0a;
-      --bg-card: #121212;
-      --text-primary: #ffffff;
-      --text-secondary: #b0b0b0;
-      --accent-blue: #00bcd4;
-      --accent-hover: #6ee7f3;
-      --border-color: #1e1e1e;
-    }
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-card: #121212;
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --accent-blue: #00bcd4;
+  --border-color: #1e1e1e;
+}
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-primary);
-    }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-primary);
+}
 
-    .container { max-width: 1100px; margin: auto; padding: 20px; }
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
 
-    .site-header {
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
-      top: 0;
-      background: #0a0a0a;
-    }
+/* NAV */
+.site-header {
+  border-bottom: 1px solid var(--border-color);
+}
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 1rem;
-    }
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
 
-    .brand {
-      color: var(--accent-blue);
-      font-weight: 800;
-      text-decoration: none;
-    }
+.brand {
+  color: var(--accent-blue);
+  font-weight: 800;
+  text-decoration: none;
+}
 
-    .links { display: flex; gap: 1rem; }
+.links {
+  display: flex;
+  gap: 1rem;
+}
 
-    .nav-link {
-      color: var(--text-secondary);
-      text-decoration: none;
-    }
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
 
-    .nav-link.active, .nav-link:hover {
-      color: var(--accent-blue);
-    }
+.nav-link.active,
+.nav-link:hover {
+  color: var(--accent-blue);
+}
 
-    .section { padding: 3rem 0; }
+/* SECTION */
+.section {
+  padding: 40px 0;
+}
 
-    h2 { margin-bottom: 2rem; }
+h2 {
+  margin-bottom: 20px;
+}
 
-    .contact-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-    }
+/* CARDS */
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 
-    .card {
-      background: var(--bg-card);
-      padding: 2rem;
-      border-radius: 12px;
-      border: 1px solid var(--border-color);
-    }
+.card {
+  background: var(--bg-card);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
 
-    .contact-card { text-align: center; }
+/* LEFT CARD */
+.contact-card {
+  text-align: center;
+}
 
-    .contact-avatar {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center 30%; /*
-      border: 3px solid var(--accent-blue);
-      display: block;
-      margin: 0 auto;
-    }
+.contact-avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 25%;
+  border: 3px solid var(--accent-blue);
+  margin: 0 auto 10px;
+}
 
-    .contact-avatar:hover {
-      transform: scale(1.05);
-    }
+.contact-name {
+  color: var(--accent-blue);
+  margin-top: 10px;
+}
 
-    .contact-name {
-      margin-top: 1rem;
-      color: var(--accent-blue);
-    }
+.contact-summary {
+  color: var(--text-secondary);
+  margin: 10px 0 20px;
+}
 
-    .contact-summary {
-      margin: 1rem 0;
-      color: var(--text-secondary);
-    }
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  margin: 6px;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
 
-    .btn {
-      display: inline-block;
-      margin: 0.3rem;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-    }
+.btn-primary {
+  background: var(--accent-blue);
+  color: black;
+}
 
-    .btn-primary {
-      background: var(--accent-blue);
-      color: black;
-    }
+.btn-outline {
+  border: 1px solid var(--border-color);
+  color: white;
+}
 
-    .btn-outline {
-      border: 1px solid var(--border-color);
-      color: white;
-    }
+.btn-outline:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
 
-    .btn-outline:hover {
-      border-color: var(--accent-blue);
-      color: var(--accent-blue);
-    }
+/* DETAILS */
+.mini {
+  margin-bottom: 15px;
+}
 
-    .mini { margin-bottom: 1rem; }
+.mini-title {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
 
-    .mini-title {
-      color: var(--text-secondary);
-      font-size: 12px;
-    }
+.mini a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
 
-    .mini a {
-      color: var(--accent-blue);
-      text-decoration: none;
-    }
-
-    @media(max-width:768px){
-      .contact-wrap { grid-template-columns: 1fr; }
-    }
-  </style>
+/* MOBILE */
+@media(max-width:768px){
+  .contact-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -216,8 +230,7 @@
     </div>
 
   </div>
-
 </section>
 
 </body>
-</html> 
+</html>
